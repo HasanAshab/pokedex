@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadPokemons()">
+    <h1 style="text-align: center">Welcome to Pokedex</h1>
+    <hr>
+    <div id="pokemons-container"></div>
+    <button id="add-pokemon" onc>Add</button>
+    <div id="add-pokemon-form">
+        <label for="nameBar">Name:</label>
+        <input type="text" id="nameBar" name="name"><br>
+        <label for="levelBar">Level:</label>
+        <input type="number" id="levelBar" name="level" value="1"><br>
+        <label for="healthBar">Health:</label>
+        <input type="number" id="healthBar" name="health"><br>
+        <label for="dodgingLevelBar">Dodging Level:</label>
+        <input type="number" id="dodgingLevelBar" name="dodgingLevel" value="1"><br>
+        <label for="retreatBar">Increased Retreat:</label>
+        <input type="number" id="retreatBar" name="retreat" value="1"><br>
+        <button id="submit-pokemon">Submit</button>
+        <button id="cancel-submit-pokemon">Cancel</button>
+    </div>
+    <script src="models.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

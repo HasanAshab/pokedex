@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pokemon Details</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h2 id="name" style="text-align: center"></h2>
+  <div id="pokemon-details">
+    <h4 class="pokemon-details-item" id="healthBar">Health: <div id="health" style="text-align: center"></div>
+    </h4>
+    <h4 class="pokemon-details-item" id="levelBar">Level: <div id="level" style="text-align: center"></div>
+    </h4>
+    <h4 class="pokemon-details-item" id="retreatBar">Retreat: <div id="retreat" style="text-align: center"></div>
+    </h4>
+    <h4 class="pokemon-details-item" id="dodgingBar">Dodging: <div id="dodging" style="text-align: center"></div>
+    </h4>
+  </div>
+  <button id="releaseBtn">Release</button>
+  <hr>
+
+  <div id="moves-container">
+    <div class="move">
+      <h3>Flame</h3>
+      <h5>D: 10</h5>
+      <h5>R: -2</h5>
+      <h5>HP: -50</h5>
+      <h5>RAGE: -2</h5>
+    </div>
+  </div>
+
+</body>
+<script src="../models.js"></script>
+<script src="app.js"></script>
+
+</html>
