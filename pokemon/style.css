@@ -31,12 +31,18 @@
 }
 
 .move {
+  width: 200vh;
   display: inline-block;
-  margin: 20px;
+  margin: auto;
   padding: 10px, 100px;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  overflow-wrap: break-word;
+}
+
+.move-title {
+  text-align: center;
 }
 
 #edit-pokemon-form {
@@ -48,3 +54,25 @@
   border-radius: 5px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
 }
+
+
+#add-move-form {
+  display: none;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+#edit-move-form {
+  display: none;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+

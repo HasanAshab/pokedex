@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body onload="loadDetails()">
   <h2 id="name" style="text-align: center"></h2>
   <div id="pokemon-details">
     <h4 class="pokemon-details-item" id="healthBar">Health: <div id="health" style="text-align: center"></div>
@@ -36,16 +36,37 @@
     <button id="save-btn">Save</button>
     <button id="cancel-btn">Cancel</button>
   </div>
+  
+  <div id="moves-container"></div>
 
-  <div id="moves-container">
-    <div class="move">
-      <h3>Flame</h3>
-      <h5>D: 10</h5>
-      <h5>R: -2</h5>
-      <h5>HP: -50</h5>
-      <h5>RAGE: -2</h5>
-    </div>
+
+  <div id="add-move-form">
+    <label for="nameInp">Name:</label>
+    <input type="text" id="nameInp" name="name"><br>
+    <label for="damageInp">Damage:</label>
+    <input type="number" id="damageInp" name="damage"><br>
+    <label for="retreatInp">Retreat:</label>
+    <input type="number" id="retreatInp" name="retreat"><br>
+    <label for="abilityInp">Ability:</label>
+    <input type="text" id="abilityInp" name="ability"><br>
+    <button id="save-move-btn">Save</button>
+    <button id="cancel-move-save-btn">Cancel</button>
   </div>
+
+  <div id="edit-move-form">
+    <label for="nameInp">Name:</label>
+    <input type="text" id="nameInp" name="name"><br>
+    <label for="damageInp">Damage:</label>
+    <input type="number" id="damageInp" name="damage"><br>
+    <label for="retreatInp">Retreat:</label>
+    <input type="number" id="retreatInp" name="retreat"><br>
+    <label for="abilityInp">Ability:</label>
+    <input type="text" id="abilityInp" name="ability"><br>
+    <button id="save-btn">Save</button>
+    <button id="cancel-btn">Cancel</button>
+  </div>
+  <br>
+  <button id="add-move">Add</button>
 
 </body>
 <script src="../models.js"></script>

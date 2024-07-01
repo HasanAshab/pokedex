@@ -5,6 +5,7 @@ class Pokemon {
         this.initialHealth = data.initialHealth
         this.dodgingLevel = data.dodgingLevel
         this.retreat = data.retreat
+        this.moves = data.moves ?? []
     }
 
     static all(pojo = false) {
@@ -76,7 +77,8 @@ class Pokemon {
         level: this.level,
         initialHealth: this.initialHealth,
         dodgingLevel: this.dodgingLevel,
-        retreat: this.retreat
+        retreat: this.retreat,
+        moves: this.moves
       }
     }
 }
