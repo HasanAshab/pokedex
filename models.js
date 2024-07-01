@@ -34,18 +34,37 @@ class Pokemon {
     }
     
     static getByName(name) {
-      return this.all().filter(pokemon => pokemon.name === name)[0] ?? null
+      return this.all().find(pokemon => pokemon.name === name)
     }
     
     get health() {
       return this.initialHealth + this.#calculateHealthBonusForLevel()
     }
     
-    release() {
-      const pokemons = this.constructor.all().filter(pokemon => pokemon.name !== this.name)
-      console.log(pokemons)
+    save() {
+      let pokemons = this.constructor.all()
+      pokemons = pokemons.map(pokemon => {
+        if (pokemon.name === this.name) return this
+        return pokemon
+      })
       this.constructor.sync(pokemons)
     }
+    
+    release() {
+      const pokemons = this.constructor.all().filter(pokemon => pokemon.name !== this.name)
+      this.constructor.sync(pokemons)
+    }
+    
+    getMoveByName(name) {
+      return this.moves.find(move => move.name === name)
+    }
+    
+    removeMoveByName(name) {
+      return this.moves.find(move => move.name === name)
+    }
+
+    
+    
     
     #calculateHealthBonusForLevel() {
       return (this.level - 1) * 50
