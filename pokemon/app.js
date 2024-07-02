@@ -133,15 +133,16 @@ addMoveButton.addEventListener('click', () => {
   const addMoveForm = document.getElementById('add-move-form')
   const saveButton = document.getElementById('save-move-btn')
   const cancelButton = document.getElementById('cancel-move-save-btn')
+  const idInp = document.getElementById('idInp')
 
   addMoveForm.style.display = 'block'
 
+  idInp.value = randomString(15)
   cancelButton.addEventListener('click', () => {
     addMoveForm.style.display = 'none'
   })
 
   saveButton.addEventListener('click', () => {
-    const idInp = document.getElementById('idInp')
     const nameInp = document.getElementById('nameInp-move')
     const damageInp = document.getElementById('damageInp')
     const retreatInp = document.getElementById('retreatInp-add')

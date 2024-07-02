@@ -23,10 +23,11 @@ foodCostBar.innerHTML = Pokemon.all().reduce((total, pokemon) => {
 }, 0)
 
 addPokemonButton.addEventListener('click', () => {
-    addPokemonForm = document.getElementById('add-pokemon-form')
-    submitPokemonButton = document.getElementById('submit-pokemon')
-    cancelSubmitPokemonButton = document.getElementById('cancel-submit-pokemon')
-
+    const idBar = document.getElementById('idBar')
+    const addPokemonForm = document.getElementById('add-pokemon-form')
+    const submitPokemonButton = document.getElementById('submit-pokemon')
+    const cancelSubmitPokemonButton = document.getElementById('cancel-submit-pokemon')
+    idBar.value = randomString(15)
     addPokemonForm.style.display = 'block'
     
     cancelSubmitPokemonButton.addEventListener('click', () => {
@@ -35,14 +36,13 @@ addPokemonButton.addEventListener('click', () => {
     })
 
     submitPokemonButton.addEventListener('click', () => {
-        const idBar = document.getElementById('idBar')
         const nameBar = document.getElementById('nameBar')
         const levelBar = document.getElementById('levelBar')
         const healthBar = document.getElementById('healthBar')
         const dodgingLevelBar = document.getElementById('dodgingLevelBar')
         const retreatBar = document.getElementById('retreatBar')
         const pokemon = Pokemon.create({
-            id: idBar.id,
+            id: idBar.value,
             name: nameBar.value,
             level: parseInt(levelBar.value),
             initialHealth: parseInt(healthBar.value),
