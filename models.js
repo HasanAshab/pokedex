@@ -1,5 +1,6 @@
 class Pokemon {
     constructor(data) {
+        this.id = data.id
         this.name = data.name
         this.level = data.level
         this.initialHealth = data.initialHealth
@@ -21,21 +22,21 @@ class Pokemon {
     }
     
     static create(data) {
-      const pokemon = new this(data)
       const pokemons = this.all()
-      const pokemonExists = pokemons.some(existingPokemon => 
-        existingPokemon.name === pokemon.name
+      const idExists = pokemons.some(existingPokemon => 
+        existingPokemon.id === data.id
       )
-      if (pokemonExists) {
+      if (idExists) {
         throw new Error("Pokemon already exists on your dex")
       }
+      const pokemon = new this(data)
       pokemons.push(pokemon)
       this.sync(pokemons)
       return pokemon
     }
     
-    static getByName(name) {
-      return this.all().find(pokemon => pokemon.name === name)
+    static find(id) {
+      return this.all().find(pokemon => pokemon.id === id)
     }
     
     get health() {
@@ -45,7 +46,7 @@ class Pokemon {
     save() {
       let pokemons = this.constructor.all()
       pokemons = pokemons.map(pokemon => {
-        if (pokemon.name === this.name) return this
+        if (pokemon.id === this.id) return this
         return pokemon
       })
       this.constructor.sync(pokemons)
@@ -56,16 +57,22 @@ class Pokemon {
       this.constructor.sync(pokemons)
     }
     
-    getMoveByName(name) {
-      return this.moves.find(move => move.name === name)
+    findMove(id) {
+      return this.moves.find(move => move.id === id)
     }
     
-    removeMoveByName(name) {
-      return this.moves.find(move => move.name === name)
+    removeMove(id) {
+      this.moves = this.moves.filter(move => move.id !== id)
+      this.save()
     }
-
     
-    
+    updateMove(id, data) {
+      this.moves = this.moves.map(move => {
+        if (move.id !== id) return move
+        return Object.assign(move, data)
+      })
+      this.save()
+    }
     
     #calculateHealthBonusForLevel() {
       return (this.level - 1) * 50
@@ -73,6 +80,7 @@ class Pokemon {
     
     toJSON() {
       return {
+        id: this.id,
         name: this.name,
         level: this.level,
         initialHealth: this.initialHealth,

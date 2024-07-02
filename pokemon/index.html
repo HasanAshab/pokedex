@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pokemon Details</title>
   <link rel="stylesheet" href="style.css">
+  <script src="models.js"></script>
 </head>
 
 <body onload="loadDetails()">
@@ -15,7 +16,7 @@
     </h4>
     <h4 class="pokemon-details-item" id="levelBar">Level: <div id="level" style="text-align: center"></div>
     </h4>
-    <h4 class="pokemon-details-item" id="retreatBar">Retreat: <div id="retreat" style="text-align: center"></div>
+    <h4 class="pokemon-details-item" id="retreatBar">+Retreat: <div id="retreat" style="text-align: center"></div>
     </h4>
     <h4 class="pokemon-details-item" id="dodgingBar">Dodging: <div id="dodging" style="text-align: center"></div>
     </h4>
@@ -25,6 +26,8 @@
   <hr>
   
   <div id="edit-pokemon-form">
+    <label for="nameInp">Name:</label>
+    <input type="text" id="nameInp" name="name"><br>
     <label for="levelInp">Level:</label>
     <input type="number" id="levelInp" name="level"><br>
     <label for="healthInp">Health:</label>
@@ -41,12 +44,14 @@
 
 
   <div id="add-move-form">
-    <label for="nameInp">Name:</label>
-    <input type="text" id="nameInp" name="name"><br>
+    <label for="idInp">ID:</label>
+    <input type="text" id="idInp" name="id"><br>
+    <label for="nameInp-move">Name:</label>
+    <input type="text" id="nameInp-move" name="name"><br>
     <label for="damageInp">Damage:</label>
     <input type="number" id="damageInp" name="damage"><br>
-    <label for="retreatInp">Retreat:</label>
-    <input type="number" id="retreatInp" name="retreat"><br>
+    <label for="retreatInp-add">Retreat:</label>
+    <input type="number" id="retreatInp-add" name="retreat"><br>
     <label for="abilityInp">Ability:</label>
     <input type="text" id="abilityInp" name="ability"><br>
     <button id="save-move-btn">Save</button>
@@ -54,16 +59,16 @@
   </div>
 
   <div id="edit-move-form">
-    <label for="nameInp">Name:</label>
-    <input type="text" id="nameInp" name="name"><br>
-    <label for="damageInp">Damage:</label>
-    <input type="number" id="damageInp" name="damage"><br>
-    <label for="retreatInp">Retreat:</label>
-    <input type="number" id="retreatInp" name="retreat"><br>
-    <label for="abilityInp">Ability:</label>
-    <input type="text" id="abilityInp" name="ability"><br>
-    <button id="save-btn">Save</button>
-    <button id="cancel-btn">Cancel</button>
+    <label for="nameInp-edit">Name:</label>
+    <input type="text" id="nameInp-edit" name="name"><br>
+    <label for="damageInp-edit">Damage:</label>
+    <input type="number" id="damageInp-edit" name="damage"><br>
+    <label for="retreatInp-edit">Retreat:</label>
+    <input type="number" id="retreatInp-edit" name="retreat"><br>
+    <label for="abilityInp-edit">Ability:</label>
+    <input type="text" id="abilityInp-edit" name="ability"><br>
+    <button id="save-edit-move-btn">Save</button>
+    <button id="cancel-edit-move-btn">Cancel</button>
   </div>
   <br>
   <button id="add-move">Add</button>
