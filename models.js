@@ -8,16 +8,23 @@ class Pokemon {
         this.retreat = data.retreat
         this.moves = data.moves ?? []
     }
+    
+    static raw() {
+      return localStorage.getItem('pokemons')
+    }
 
-    static all(pojo = false) {
-        const rawPokemons = localStorage.getItem('pokemons')
+    static all() {
+        const rawPokemons = this.raw()
         const pokemonsData = rawPokemons ? JSON.parse(rawPokemons) : []
-        if (pojo) return pokemonsData
+        if (!Array.isArray(pokemonsData)) return []
         return pokemonsData.map(pokemonData => new Pokemon(pokemonData))
     }
     
     static sync(pokemons) {
-      localStorage.setItem('pokemons', JSON.stringify(pokemons))
+      pokemons = typeof pokemons === "string"
+        ? pokemons
+        : JSON.stringify(pokemons)
+      localStorage.setItem('pokemons', pokemons)
       return pokemons
     }
     
@@ -58,6 +65,7 @@ class Pokemon {
     }
     
     findMove(id) {
+      console.log(id, this.moves)
       return this.moves.find(move => move.id === id)
     }
     

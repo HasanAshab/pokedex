@@ -1,0 +1,36 @@
+[
+  {
+    "id": "idBar",
+    "name": "charm",
+    "level": 15,
+    "initialHealth": 150,
+    "dodgingLevel": 1,
+    "retreat": 0,
+    "moves": [
+      {
+        "name": "baz",
+        "damage": 12,
+        "retreat": 1,
+        "ability": ""
+      }
+    ]
+  },
+  {
+    "id": "EhNJquPnmNygLql",
+    "name": "nxnxnd",
+    "level": 1,
+    "initialHealth": 19,
+    "dodgingLevel": 1,
+    "retreat": 0,
+    "moves": []
+  },
+  {
+    "id": "kOBns2uY3m6n2mI",
+    "name": "ndnsnzn",
+    "level": 1,
+    "initialHealth": 92,
+    "dodgingLevel": 1,
+    "retreat": 0,
+    "moves": []
+  }
+]
